@@ -1,4 +1,3 @@
-// This is your Prisma schema file.
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,34 +6,31 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model User {
-  id           Int             @id @default(autoincrement())
-  email        String          @unique
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
   name         String
   lastName     String
   phone        String
   password     String
-  role         Role            @default(USER)
-
+  role         Role          @default(USER)
   appointments Appointment[]
 }
 
 model Appointment {
   id          Int       @id @default(autoincrement())
   date        DateTime
-
   userId      Int
-  user        User      @relation(fields: [userId], references: [id])
-
   timeBlockId Int
   timeBlock   TimeBlock @relation(fields: [timeBlockId], references: [id])
+  user        User      @relation(fields: [userId], references: [id])
 }
 
 model TimeBlock {
   id           Int           @id @default(autoincrement())
   startTime    DateTime
   endTime      DateTime
-
   appointments Appointment[]
 }
 
