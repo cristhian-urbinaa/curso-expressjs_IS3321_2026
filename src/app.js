@@ -33,7 +33,7 @@ app.get('/generate-token', (req, res) => {
     res.json({ token });
 });
 
-app.get('/', authenticateToken, (req, res) => {
+app.get('/', (req, res) => {
     res.send(`
     <h1>Curso Express.js</h1>
     <p>Esto es una Aplicación node js con Express.js</p>
