@@ -53,7 +53,7 @@ const register = async (req, res) => {
     console.error(error);
 
     res.status(500).json({
-      error: 'Error registrando usuario'
+      error: 'Error registrando usuario por correo repetido'
     });
   }
 };
