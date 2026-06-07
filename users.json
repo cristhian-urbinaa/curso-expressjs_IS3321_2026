@@ -1,0 +1,52 @@
+[
+  {
+    "id": 2,
+    "name": "Jenny Smith",
+    "email": "jenny@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Nuevo Usuario",
+    "email": "nuevo@ejemplo.com"
+  },
+  {
+    "id": 30,
+    "name": "Carlos",
+    "email": "carlos@gmail.com"
+  },
+  {
+    "id": 49,
+    "name": "Reyes Aleman",
+    "email": "reyes@gmail.com"
+  },
+  {
+    "id": 77,
+    "name": "Cristhian Urbina",
+    "email": "cristhian@gmail.com"
+  },
+  {
+    "id": 72,
+    "name": "Daniel Sandino",
+    "email": "daniel@gmail.com"
+  },
+  {
+    "id": 67,
+    "name": "Angel MUñoz",
+    "email": "angel@gmail.com"
+  },
+  {
+    "id": 75,
+    "name": "Jafeth Garcia",
+    "email": "jafeth@ejemplo.com"
+  },
+  {
+    "id": 82,
+    "name": "Francisco Garcia",
+    "email": "francisco@ejemplo.com"
+  },
+  {
+    "id": 89,
+    "name": "Antonio Brenes mendoza",
+    "email": "antonio@ejemplo.com"
+  }
+]
