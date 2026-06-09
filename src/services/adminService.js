@@ -16,11 +16,20 @@ const createTimeBlockService = async (startTime, endTime) => {
 const listReservationService = async () => {
     // Si 'prisma' está undefined aquí, es porque la instancia de arriba falló o no es visible
     const reservations = await prisma.appointment.findMany({
-        include: {
-            user: true,
-            timeBlock: true
-        }
-    });
+    include: {
+        user: {
+            select: {
+                id: true,
+                email: true,
+                name: true,
+                lastName: true,
+                phone: true,
+                role: true
+            }
+        },
+        timeBlock: true
+    }
+});
     return reservations;
 };
 
