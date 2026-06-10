@@ -27,9 +27,9 @@ class ReservationService {
 
     async get(id) {
         return await prisma.appointment.findUnique({
-            where: { 
+            where: {
                 id: parseInt(id)
-             },
+            },
             include: {
                 user: {
                     select: {
@@ -47,6 +47,17 @@ class ReservationService {
     }
 
     async edit(id, data) {
+
+        const reservation = await prisma.appointment.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        });
+
+        if (!reservation) {
+            throw new Error('La reserva no existe');
+        }
+
         const conflict = await prisma.appointment.findFirst({
             where: {
                 date: new Date(data.date),
@@ -69,6 +80,17 @@ class ReservationService {
     }
 
     async delete(id) {
+
+        const reservation = await prisma.appointment.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        });
+
+        if (!reservation) {
+            throw new Error('La reserva no existe');
+        }
+
         return await prisma.appointment.delete({
             where: { id: parseInt(id) }
         });
